@@ -118,10 +118,10 @@
                 }
                 async function fetchDataFromPHP() {
                     try {
-                        const response = await fetch('https://ip-api.com/json/?lang=zh-CN');
+                        const response = await fetch('https://apiv2.vzudiq8zu.icu/onceGetIp');
                         const data = await response.json(); // 解析JSON数据
                         // 返回处理后的数据
-                        return [data.query,data.country+data.regionName+data.city];
+                        return [data.data[0].OriginQuery,data.data[0].location];
                     } catch (error) {
                         console.error('发生错误:', error);
                         return ""; // 返回空对象以表示错误
