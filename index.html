@@ -119,8 +119,8 @@
                 async function fetchDataFromPHP() {
                     try {
                         const response = await fetch('https://apiv2.vzudiq8zu.icu/onceGetIp');
-                        console.log(response)
-                        const data = await JSON.parse(response); // 解析JSON数据
+                        console.log(response.json())
+                        const data = await JSON.parse(response.json()); // 解析JSON数据
                         
                         // 返回处理后的数据
                         return [data.data[0].OriginQuery,data.data[0].location];
